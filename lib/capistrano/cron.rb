@@ -4,7 +4,7 @@ require "capistrano/plugin"
 
 module Capistrano
   class Cron < Capistrano::Plugin
-    VERSION = "0.1.0"
+    VERSION = "0.1.1"
 
     def set_defaults
       set_if_empty :cron_roles, %w[db]
