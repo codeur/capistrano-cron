@@ -16,7 +16,7 @@ class Capistrano::Cron
       pre_set(options[:set])
       set(:bundle_command, options[:bundle_command]) if options[:bundle_command]
       set(:path, options[:path]) if options[:path]
-      set(:environment, options[:environment]) if options[:environment]
+      set(:environment, options[:environment].to_s) if options[:environment]
       set(:environment_variable, "RAILS_ENV")
 
       @roles = options[:roles] || []
