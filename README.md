@@ -1,7 +1,8 @@
 # Capistrano::Cron
 
-The gem is based on Whenever code. The difference is that crontab file is generated and uploaded to the server during deployment.
-No bin/whenever is needed on the server. It handles well asdf too.
+The gem is based on [whenever](https://github.com/javan/whenever) code.
+The difference is that crontab file is generated and uploaded to the server during deployment.
+No `bin/whenever` is needed on the server. It handles well `asdf` too.
 
 ## Installation
 
@@ -37,7 +38,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/capistrano-cron. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/capistrano-cron/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/codeur/capistrano-cron. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/codeur/capistrano-cron/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -45,4 +46,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Capistrano::Cron project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/capistrano-cron/blob/main/CODE_OF_CONDUCT.md).
+Everyone interacting in the Capistrano::Cron project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/codeur/capistrano-cron/blob/main/CODE_OF_CONDUCT.md).
