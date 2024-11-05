@@ -20,7 +20,7 @@ class Capistrano::Cron
       end
 
       def self.enumerate(item, detect_cron = true)
-        if item and item.is_a?(String)
+        if item&.is_a?(String)
           items =
             if detect_cron && item =~ REGEX
               [item]
@@ -29,7 +29,7 @@ class Capistrano::Cron
             end
         else
           items = item
-          items = [items] unless items and items.respond_to?(:each)
+          items = [items] unless items&.respond_to?(:each)
         end
         items
       end

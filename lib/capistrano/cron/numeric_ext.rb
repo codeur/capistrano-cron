@@ -48,7 +48,7 @@ class Capistrano::Cron
 end
 
 Numeric.class_eval do
-  def respond_to?(method, include_private = false)
+  def respond_to_missing?(method, include_private = false)
     super || Capistrano::Cron::NumericSeconds.public_method_defined?(method)
   end
 

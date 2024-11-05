@@ -4,8 +4,6 @@ require "capistrano/plugin"
 
 module Capistrano
   class Cron < Capistrano::Plugin
-    VERSION = "0.1.1"
-
     def set_defaults
       set_if_empty :cron_roles, %w[db]
       set_if_empty :cron_identifier, -> { "#{fetch(:application)}_#{fetch(:stage)}" }
@@ -43,7 +41,7 @@ module Capistrano
         # Strip n lines from the top of the file as specified by the :cut option.
         # Use split with a -1 limit option to ensure the join is able to rebuild
         # the file with all of the original seperators in-tact.
-        stripped_contents = contents.split($/, -1)[0..-1].join($/)
+        stripped_contents = contents.split($/, -1).join($/)
 
         # Some cron implementations require all non-comment lines to be newline-
         # terminated. (issue #95) Strip all newlines and replace with the default

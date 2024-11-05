@@ -45,7 +45,7 @@ class Capistrano::Cron
       @set_variables.has_key?(name) ? @set_variables[name] : super
     end
 
-    def self.respond_to?(name, include_private = false)
+    def respond_to_missing?(name, include_private = false)
       @set_variables.has_key?(name) || super
     end
 
@@ -128,10 +128,10 @@ class Capistrano::Cron
       0.upto(4) do |f|
         (entries.length - 1).downto(1) do |i|
           next if entries[i][f] == "*"
-          comparison = entries[i][0...f] + entries[i][f + 1..-1]
+          comparison = entries[i][0...f] + entries[i][f + 1..]
           (i - 1).downto(0) do |j|
             next if entries[j][f] == "*"
-            if comparison == entries[j][0...f] + entries[j][f + 1..-1]
+            if comparison == entries[j][0...f] + entries[j][f + 1..]
               entries[j][f] += "," + entries[i][f]
               entries.delete_at(i)
               break

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/capistrano/cron"
+require_relative "lib/capistrano/cron/version"
 
 Gem::Specification.new do |spec|
   spec.name = "capistrano-cron"
