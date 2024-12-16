@@ -48,6 +48,11 @@ module Capistrano
         # platform record seperator ($/)
         stripped_contents.gsub(/\s+$/, $/)
       end
+    rescue SSHKit::Command::Failed => e
+      # Detect if "no crontab for" is the only error message
+      return "" if e.message =~ /no crontab for/
+
+      raise e
     end
 
     def install_crontab(content)
